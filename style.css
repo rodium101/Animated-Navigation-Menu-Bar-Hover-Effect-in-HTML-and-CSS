@@ -1,0 +1,85 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lora', serif;
+  }
+
+
+  body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+  }
+
+  nav{
+    width: 600px;
+    height: 60px;
+    border-radius: 5px;
+    background: #fff;
+    display: flex;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.50);
+  }
+
+  nav label{
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.3 ease;
+  }
+
+  nav label:hover{
+    background: rgba(142, 68, 173, 0.3);
+  }
+
+nav label i{
+    margin-right: 4px;
+}
+
+.slider{
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    background: #9c31ca;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#Home:checked ~ nav label .Home,
+#Blog:checked ~ nav label .Blog,
+#Code:checked ~ nav label .Code,
+#Help:checked ~ nav label .Help,
+#About:checked ~ nav label .About{
+    color: #fff;
+}
+
+
+#Blog:checked ~ nav .slider{
+    left: 20%;
+}
+#Code:checked ~ nav .slider{
+    left: 40%;
+}
+#Help:checked ~ nav .slider{
+    left: 60%;
+}
+#About:checked ~ nav .slider{
+    left: 80%;
+}
